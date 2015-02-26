@@ -18,7 +18,6 @@ class TextBuddy
 {
 private:
 	list<string> _lineList;
-
 	const string MESSAGE_WELCOME;
 	const string MESSAGE_TERMINATION;
 	const string WARNING_INVALID_COMMAND_ENTERED;
@@ -32,7 +31,7 @@ private:
 	const string PROMPT_COMMAND;
 	char buffer[300];
 public:
-
+	TextBuddy();
 	void addLine(string);
 	string deleteLine(string);
 	void clearAll();
@@ -47,9 +46,10 @@ public:
 	string executeCommand(string filename, string userCommand);
 
 	void run(string filename);
-	void showToUser(string content);
 	void writeToFile(string filename);
-	void checkCLI(int argc);
+	static void showToUser(string content);
+    //void checkCLI(int argc);
+
 };
 
 #endif

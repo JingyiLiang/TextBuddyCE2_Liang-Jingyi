@@ -20,14 +20,23 @@ char buffer[300] = "";
 int main(int argc, char* argv[]){
 	//command line parameter usage
 	string filename;
+	
+	
+	if(argc != 2){
+		TextBuddy::showToUser(WARNING_COMMAND_LINE_PARAMETER_INPUT_ERROR);
+		TextBuddy::showToUser(MESSAGE_TERMINATION);
+		getchar();
+		exit(0);
+	}
+	
 	TextBuddy tb;
-
-	tb.checkCLI(argc);
 	filename = argv[1];
 	
 	tb.run(filename);
 	return 0;
 }
+
+TextBuddy::TextBuddy(){}
 
 void TextBuddy::run(string filename){
 
@@ -45,7 +54,7 @@ void TextBuddy::run(string filename){
 		showToUser(feedback);
 	}
 }
-
+/*
 void TextBuddy::checkCLI(int argc){
 	if(argc != 2){
 		showToUser(WARNING_COMMAND_LINE_PARAMETER_INPUT_ERROR);
@@ -53,7 +62,7 @@ void TextBuddy::checkCLI(int argc){
 		getchar();
 		exit(0);
 	}
-}
+}*/
 
 string TextBuddy::executeCommand(string filename, string userCommand){
 	CommandType command;
