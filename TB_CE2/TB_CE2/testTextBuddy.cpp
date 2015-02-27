@@ -31,33 +31,32 @@ string executeCommand(string filename, string userCommand, TextBuddy tb1);
 void showToUser(string content);
 void writeToFile(string filename, TextBuddy tb1);
 
-int main (/*int argc, char* argv[]*/){
+int main (int argc, char* argv[]){
 	//command line parameter usage
 	string filename;
 
-	/*if(argc != 2){
+	if(argc != 2){
 		showToUser(WARNING_COMMAND_LINE_PARAMETER_INPUT_ERROR);
 		showToUser(MESSAGE_TERMINATION);
 		getchar();
 		exit(0);
-	}*/
+	}
 
-	//filename = argv[1];
-	cin >> filename;
+	filename = argv[1];
 
 	//write into buffer first
 	sprintf_s(buffer, MESSAGE_WELCOME.c_str(),filename.c_str());
 	showToUser(buffer);
 
 	//create a new TextBuddy item
-	TextBuddy tb1();
+	TextBuddy tb1(0);
 
 	//always loop untill user enter "exit" command
 	while(true){
 		cout << "command:"<< endl;
 		string userCommand;
 		getline(cin,userCommand);
-		string feedback = executeCommand(filename, userCommand);
+		string feedback = executeCommand(filename, userCommand, tb1);
 		showToUser(feedback);
 	}
 }
