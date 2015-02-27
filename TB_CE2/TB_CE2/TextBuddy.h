@@ -18,7 +18,7 @@ class TextBuddy
 {
 private:
 	list<string> _lineList;
-	const string MESSAGE_WELCOME;
+	/*const string MESSAGE_WELCOME;
 	const string MESSAGE_TERMINATION;
 	const string WARNING_INVALID_COMMAND_ENTERED;
 	const string WARNING_COMMAND_LINE_PARAMETER_INPUT_ERROR;
@@ -26,9 +26,11 @@ private:
 	const string MESSAGE_DELETED;
 	const string MESSAGE_EMPTY;
 	const string MESSAGE_CLEARED_ALL;
+	const string MESSAGE_SORTED_ALL;
+	const string MESSAGE_SEARCH_RESULT;
 	const string MESSAGE_EXIT;
 	const string ERROR_UNRECOGNISED_COMMAND_TYPE;
-	const string PROMPT_COMMAND;
+	const string PROMPT_COMMAND;*/
 	char buffer[300];
 public:
 	TextBuddy();
@@ -38,7 +40,7 @@ public:
 	void displayAll();
 	string allToString();
 
-	enum CommandType {Add = 0, Display = 1, Delete = 2, Clear =3, Exit = 4, Invalid = 5};
+	enum CommandType {Add = 0, Display = 1, Delete = 2, Clear =3, Exit = 4, Sort = 5, Search = 6, Invalid = 7};
 
 	CommandType determineCommandType(string firstWord);
 	string removeFirstWord(string userCommand);
