@@ -110,6 +110,14 @@ string TextBuddy::executeCommand(string filename, string userCommand){
 	}
 }
 
+string TextBuddy::searchFile(string content){
+	return "";
+}
+
+void TextBuddy::sortFile(){
+	return;
+}
+
 void TextBuddy:: writeToFile(string filename){
 	ofstream ofs;
 	string content;

@@ -44,10 +44,12 @@ public:
 	string removeFirstWord(string userCommand);
 	string getFirstWord(string userCommand);
 	string executeCommand(string filename, string userCommand);
+	string searchFile(string content);
 
 	void run(string filename);
 	void writeToFile(string filename);
 	static void showToUser(string content);
+	void sortFile();
     //void checkCLI(int argc);
 
 };
