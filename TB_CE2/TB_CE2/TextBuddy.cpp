@@ -21,21 +21,18 @@ const string PROMPT_COMMAND =  "command: ";
 char buffer[300] = "";
 
 int main(int argc, char* argv[]){
-	//command line parameter usage
 	string filename;
 	
-	/*
+	//command line parameter usage
 	if(argc != 2){
 		TextBuddy::showToUser(WARNING_COMMAND_LINE_PARAMETER_INPUT_ERROR);
 		TextBuddy::showToUser(MESSAGE_TERMINATION);
 		getchar();
 		exit(0);
 	}
-	*/
-
 	TextBuddy tb;
-	//filename = argv[1];
-	cin >> filename;
+	filename = argv[1];
+
 	tb.run(filename);
 	return 0;
 }
@@ -58,15 +55,6 @@ void TextBuddy::run(string filename){
 		showToUser(feedback);
 	}
 }
-/*
-void TextBuddy::checkCLI(int argc){
-	if(argc != 2){
-		showToUser(WARNING_COMMAND_LINE_PARAMETER_INPUT_ERROR);
-		showToUser(MESSAGE_TERMINATION);
-		getchar();
-		exit(0);
-	}
-}*/
 
 string TextBuddy::executeCommand(string filename, string userCommand){
 	CommandType command;
@@ -130,6 +118,9 @@ string TextBuddy::executeCommand(string filename, string userCommand){
 }
 
 string TextBuddy::searchFile(string content){
+	//search the list from begin to end
+	//return the found content in a formatted string
+
 	list<string>::iterator it;
 	int n=1;
 	ostringstream oss;
@@ -153,6 +144,8 @@ void TextBuddy::sortFile(){
 }
 
 void TextBuddy:: writeToFile(string filename){
+	//write content stored in the list to a file
+
 	ofstream ofs;
 	string content;
 	content = allToString();
@@ -170,7 +163,6 @@ string TextBuddy::removeFirstWord(string userCommand){
 
 string TextBuddy::getFirstWord(string userCommand){
 	return userCommand.substr(0, userCommand.find(' '));
-	//(?)from microsoft VS online resource forum
 }
 
 TextBuddy::CommandType TextBuddy::determineCommandType(string firstWord){
@@ -238,6 +230,8 @@ void TextBuddy::displayAll(){
 }
 
 string TextBuddy::allToString(){
+	//convert content stored in list to formatted string
+
     ostringstream oss;
     list<string>:: iterator it;
     int n = 1;

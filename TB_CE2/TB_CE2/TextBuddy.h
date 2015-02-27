@@ -18,19 +18,6 @@ class TextBuddy
 {
 private:
 	list<string> _lineList;
-	/*const string MESSAGE_WELCOME;
-	const string MESSAGE_TERMINATION;
-	const string WARNING_INVALID_COMMAND_ENTERED;
-	const string WARNING_COMMAND_LINE_PARAMETER_INPUT_ERROR;
-	const string MESSAGE_ADDED;
-	const string MESSAGE_DELETED;
-	const string MESSAGE_EMPTY;
-	const string MESSAGE_CLEARED_ALL;
-	const string MESSAGE_SORTED_ALL;
-	const string MESSAGE_SEARCH_RESULT;
-	const string MESSAGE_EXIT;
-	const string ERROR_UNRECOGNISED_COMMAND_TYPE;
-	const string PROMPT_COMMAND;*/
 	char buffer[300];
 public:
 	TextBuddy();
@@ -52,7 +39,6 @@ public:
 	void writeToFile(string filename);
 	static void showToUser(string content);
 	void sortFile();
-    //void checkCLI(int argc);
 
 };
 
