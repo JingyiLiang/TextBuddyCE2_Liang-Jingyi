@@ -12,7 +12,6 @@ namespace UnitTestTextBuddy
 		
 		TEST_METHOD(TestSearch)
 		{
-			// TODO: Your test code here
 			TextBuddy testClass;
 
 			testClass.addLine("CS2103");
